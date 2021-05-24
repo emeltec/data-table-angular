@@ -28,6 +28,7 @@ export class AppComponent {
       _i['showInput'] = false;
       _i['stateErr'] = '';
       _i['textErr'] = ''
+      console.log(_i);
       return _i;
     })
     this.debtsList[0].isDisabled = false;
