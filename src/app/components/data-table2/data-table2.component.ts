@@ -77,9 +77,10 @@ export class DataTable2Component {
     item.amount = `S/ ${actuallyAmount}`;
   }
 
-  changeSelectTipoPago(value: any, item: any): void {
+  changeSelectTipoPago(event: any, item: any): void {
+    console.log(event.target.value)
     item.showInput = false;
-    switch (value.detail) {
+    switch (event.target.value) {
       case "1":
         item.amount = `${item.minimo}`
         break;

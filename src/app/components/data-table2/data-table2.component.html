@@ -1,7 +1,7 @@
 <table border="1">
   <tr>
     <td width='45'>
-      <input type="checkbox" checked='false' [checked]="checkAll" [value]="checkAll"
+      <input type="checkbox" checked="false" [checked]="checkAll" [value]="checkAll"
         (click)="selectedAll()">
     </td>
     <td>
@@ -15,7 +15,7 @@
       </p>
     </td>
     <td>
-      <p family="demi" size="sm" color="onsurface-800">
+      <p family="demi" size="sm" color="onsurface-800"> 
         N° DOC. PAGO
       </p>
     </td>
@@ -45,9 +45,9 @@
       </p>
     </td>
   </tr>
-  <tr *ngFor='let item of debtsList; let i = index' [ngClass]="{'disabledRow' : item.isDisabled }">
+  <tr *ngFor="let item of debtsList; let i = index" [ngClass]="{'disabledRow' : item.isDisabled }">
     <td width='45'>
-      <input type="checkbox" [checked]='item.isChecked' [value]='item.isChecked'
+      <input type="checkbox" [checked]="item.isChecked" [value]='item.isChecked'
         (click)="selectedItem(item,i)">
     </td>
     <td>
@@ -63,9 +63,8 @@
       <p family="regular" size="sm" color="onsurface-800">{{item.expiration}}</p>
     </td>
     <td *ngIf="selectionParameters.showTipoPago">
-      <select size="sm" ctrl-value="0" (change)="changeSelectTipoPago($event,item)">
-        <option slot="header" label="Seleccionar"></option>
-        <option *ngFor="let item of tipoDePagos" value="{{item.value}}">{{item.name}}
+      <select size="sm" ctrl-value="0" (change)="changeSelectTipoPago($event, item)">
+        <option *ngFor="let item of tipoDePagos" [value]="item.value">{{item.name}}
         </option>
       </select>
     </td>
@@ -76,9 +75,7 @@
       <p family="regular" size="sm" color="onsurface-800">{{item.fixedCharge}}</p>
     </td>
     <td content-align='right'>
-      <input *ngIf="item.showInput" style="margin-top:10px" mask="amount" type="text"
-        value='' (change)="changeAmount($event,item)">
-      <!-- Input con mensaje de error -->
+      <input *ngIf="item.showInput" type="text" value="" (change)="changeAmount($event,item)">
 
       <p *ngIf="!item.showInput" family="regular" size="sm" color="onsurface-800">{{item.amount}}
       </p>
