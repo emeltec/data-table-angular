@@ -1,0 +1,22 @@
+/* Add application styles & imports to this file! */
+
+.disabledRow{
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.input-amount {
+    width: 100px;
+}
+
+
+
+/** TABLE */
+
+.table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 5px 3px;
+}
